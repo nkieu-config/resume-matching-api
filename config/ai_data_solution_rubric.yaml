@@ -1,0 +1,108 @@
+job_title: AI & Data Solution
+jd_version: "1.0"
+rubric_version: "1.0"
+criteria:
+  - id: experience.ai_delivery
+    name: AI application delivery
+    description: Designs or delivers AI applications in projects or professional work
+    category: experience
+    weight: 10
+  - id: experience.requirements
+    name: Requirement gathering and stakeholder work
+    description: Works with users or business teams to understand system requirements
+    category: experience
+    weight: 6
+  - id: experience.evaluation
+    name: Testing and evaluation
+    description: Tests AI applications and evaluates their effectiveness
+    category: experience
+    weight: 7
+  - id: experience.production
+    name: Production deployment and engineering collaboration
+    description: Collaborates with engineers to deliver AI applications into production
+    category: experience
+    weight: 7
+  - id: skills.python
+    name: Python
+    description: Writes Python for AI, data, automation, or API workloads
+    category: skills
+    weight: 8
+  - id: skills.prompt_engineering
+    name: Prompt engineering
+    description: Designs and improves prompts for reliable AI behavior
+    category: skills
+    weight: 6
+  - id: skills.context_engineering
+    name: Context engineering
+    description: Selects and structures context supplied to language models
+    category: skills
+    weight: 5
+  - id: skills.problem_solving
+    name: Analytical problem solving
+    description: Demonstrates structured analysis and problem solving
+    category: skills
+    weight: 3
+  - id: skills.collaboration
+    name: Communication and collaboration
+    description: Communicates requirements and works across business and engineering teams
+    category: skills
+    weight: 3
+  - id: knowledge.llm
+    name: LLM and generative AI
+    description: Understands large language models and generative AI applications
+    category: knowledge
+    weight: 7
+  - id: knowledge.nlp
+    name: Natural language processing
+    description: Understands or applies NLP techniques
+    category: knowledge
+    weight: 5
+  - id: knowledge.ml
+    name: Machine-learning fundamentals
+    description: Understands machine-learning concepts and evaluation
+    category: knowledge
+    weight: 4
+  - id: knowledge.automation
+    name: Automation and data-driven architecture
+    description: Understands automation and data-driven solution design
+    category: knowledge
+    weight: 4
+  - id: tools.api_json
+    name: API and JSON
+    description: Designs or integrates APIs and structured JSON contracts
+    category: tools
+    weight: 6
+  - id: tools.llm_sdk
+    name: LLM API or SDK
+    description: Integrates an LLM through an API or SDK
+    category: tools
+    weight: 4
+  - id: tools.automation
+    name: n8n or automation pipeline
+    description: Uses n8n or another automation pipeline
+    category: tools
+    weight: 3
+    preferred: true
+  - id: tools.sql
+    name: SQL
+    description: Uses SQL for data access or analysis
+    category: tools
+    weight: 2
+    preferred: true
+  - id: tools.docker
+    name: Docker
+    description: Packages or runs applications with Docker
+    category: tools
+    weight: 2
+    preferred: true
+  - id: tools.cloud
+    name: Cloud platform
+    description: Deploys or operates workloads on a cloud platform
+    category: tools
+    weight: 3
+    preferred: true
+  - id: education.relevant
+    name: Relevant education or training
+    description: Has relevant degree, coursework, training, or certification
+    category: education
+    weight: 5

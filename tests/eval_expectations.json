@@ -1,0 +1,97 @@
+[
+  {
+    "file": "strong_match_en.pdf",
+    "expected_band": "STRONG_MATCH",
+    "expected_evidence": [
+      {"criterion_id": "experience.ai_delivery", "markers": ["LLM application delivery", "six production AI systems"]},
+      {"criterion_id": "experience.requirements", "markers": ["stakeholder workshops"]},
+      {"criterion_id": "experience.evaluation", "markers": ["failure evaluation", "prompt evaluation"]},
+      {"criterion_id": "experience.production", "markers": ["production deployment"]},
+      {"criterion_id": "skills.python", "markers": ["Python LLM"]},
+      {"criterion_id": "skills.prompt_engineering", "markers": ["prompt engineering"]},
+      {"criterion_id": "skills.context_engineering", "markers": ["context engineering"]},
+      {"criterion_id": "skills.problem_solving", "markers": ["accuracy from 72 to 91", "reduced document review"]},
+      {"criterion_id": "skills.collaboration", "markers": ["software engineers", "stakeholder workshops"]},
+      {"criterion_id": "knowledge.llm", "markers": ["LLM application"]},
+      {"criterion_id": "knowledge.nlp", "markers": ["NLP"]},
+      {"criterion_id": "knowledge.ml", "markers": ["machine-learning"]},
+      {"criterion_id": "knowledge.automation", "markers": ["CI pipelines"]},
+      {"criterion_id": "tools.api_json", "markers": ["FastAPI and JSON"]},
+      {"criterion_id": "tools.llm_sdk", "markers": ["Gemini and OpenAI SDKs"]},
+      {"criterion_id": "tools.automation", "markers": ["n8n"]},
+      {"criterion_id": "tools.sql", "markers": ["SQL"]},
+      {"criterion_id": "tools.docker", "markers": ["Docker"]},
+      {"criterion_id": "tools.cloud", "markers": ["Cloud Run"]},
+      {"criterion_id": "education.relevant", "markers": ["MSc Data Science"]}
+    ],
+    "expected_zero": []
+  },
+  {
+    "file": "partial_match_mixed.pdf",
+    "expected_band": "PARTIAL_MATCH",
+    "expected_evidence": [
+      {"criterion_id": "experience.ai_delivery", "markers": ["Gemini assistant"]},
+      {"criterion_id": "experience.requirements", "markers": ["business users"]},
+      {"criterion_id": "experience.evaluation", "markers": ["failure cases"]},
+      {"criterion_id": "skills.python", "markers": ["Python REST API"]},
+      {"criterion_id": "skills.prompt_engineering", "markers": ["prompt"]},
+      {"criterion_id": "skills.context_engineering", "markers": ["context"]},
+      {"criterion_id": "skills.collaboration", "markers": ["software engineers", "business users"]},
+      {"criterion_id": "knowledge.llm", "markers": ["Gemini assistant"]},
+      {"criterion_id": "knowledge.nlp", "markers": ["NLP"]},
+      {"criterion_id": "knowledge.ml", "markers": ["machine learning"]},
+      {"criterion_id": "tools.api_json", "markers": ["REST API", "JSON API"]},
+      {"criterion_id": "tools.llm_sdk", "markers": ["Gemini assistant"]},
+      {"criterion_id": "tools.sql", "markers": ["SQL dashboard"]},
+      {"criterion_id": "tools.docker", "markers": ["Docker"]},
+      {"criterion_id": "education.relevant", "markers": ["หลักสูตรออนไลน์"]}
+    ],
+    "expected_zero": ["experience.production", "tools.automation", "tools.cloud"]
+  },
+  {
+    "file": "low_match_th.pdf",
+    "expected_band": "LOW_MATCH",
+    "expected_evidence": [],
+    "expected_zero": [
+      "skills.python",
+      "knowledge.llm",
+      "knowledge.nlp",
+      "tools.api_json",
+      "tools.sql",
+      "tools.docker",
+      "tools.cloud"
+    ]
+  },
+  {
+    "file": "prompt_injection_en.pdf",
+    "expected_band": "LOW_MATCH",
+    "expected_evidence": [],
+    "expected_zero": [
+      "skills.python",
+      "knowledge.llm",
+      "tools.llm_sdk",
+      "tools.docker",
+      "tools.cloud"
+    ]
+  },
+  {
+    "file": "ambiguous_skills_en.pdf",
+    "expected_band": "LOW_MATCH",
+    "expected_evidence": [
+      {"criterion_id": "experience.ai_delivery", "markers": ["Gemini API for a chat feature"]},
+      {"criterion_id": "skills.python", "markers": ["Python FastAPI"]},
+      {"criterion_id": "skills.context_engineering", "markers": ["database records and deterministic calculations"]},
+      {"criterion_id": "knowledge.llm", "markers": ["Gemini API"]},
+      {"criterion_id": "tools.api_json", "markers": ["FastAPI service"]},
+      {"criterion_id": "tools.llm_sdk", "markers": ["Gemini API"]},
+      {"criterion_id": "tools.automation", "markers": ["GitHub Actions CI"]}
+    ],
+    "expected_zero": [
+      "experience.requirements",
+      "experience.production",
+      "skills.prompt_engineering",
+      "knowledge.nlp",
+      "knowledge.ml"
+    ]
+  }
+]

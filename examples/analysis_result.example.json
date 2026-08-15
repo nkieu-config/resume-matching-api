@@ -1,0 +1,450 @@
+{
+  "analysis_id": "b7bff44c8510422190809d888cc8dfb1",
+  "job": {
+    "title": "AI & Data Solution",
+    "jd_version": "1.0"
+  },
+  "result": {
+    "overall_score": 58.25,
+    "match_band": "PARTIAL_MATCH",
+    "summary": "ผลการจับคู่อยู่ในระดับ PARTIAL_MATCH โดยหมวดที่เด่นที่สุดคือ skills และประเด็นที่ควรตรวจสอบเพิ่มเติมคือ Production deployment and engineering collaboration, n8n or automation pipeline, Cloud platform"
+  },
+  "category_scores": [
+    {
+      "category": "experience",
+      "score": 17.25,
+      "max_score": 30,
+      "strengths": [
+        "AI application delivery",
+        "Requirement gathering and stakeholder work",
+        "Testing and evaluation"
+      ],
+      "gaps": [
+        "Production deployment and engineering collaboration"
+      ],
+      "criteria": [
+        {
+          "criterion_id": "experience.ai_delivery",
+          "criterion_name": "AI application delivery",
+          "category": "experience",
+          "score": 7.5,
+          "max_score": 10,
+          "evidence_level": 3,
+          "rationale_th": "มีประสบการณ์พัฒนาภายในโครงการ AI เช่น internal Gemini assistant โดยมีการออกแบบ prompt และ context",
+          "gap_th": "ยังขาดหลักฐานการส่งมอบงานระดับ production เต็มรูปแบบ",
+          "evidence": [
+            {
+              "id": "p1-e002",
+              "quote": "Data Analyst และ AI Project Developer | ประสบการณ์ 2 ปี",
+              "page": 1,
+              "source_section": "other"
+            },
+            {
+              "id": "p1-e004",
+              "quote": "พัฒนา internal Gemini assistant โดยออกแบบ prompt และ context สำหรับขอบเขตโครงการ",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "experience.requirements",
+          "criterion_name": "Requirement gathering and stakeholder work",
+          "category": "experience",
+          "score": 4.5,
+          "max_score": 6,
+          "evidence_level": 3,
+          "rationale_th": "มีประสบการณ์เก็บ requirement จาก business users และทดสอบ accuracy กับ failure cases",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e005",
+              "quote": "เก็บ requirement จาก business users และทดสอบ accuracy กับ failure cases",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "experience.evaluation",
+          "criterion_name": "Testing and evaluation",
+          "category": "experience",
+          "score": 5.25,
+          "max_score": 7,
+          "evidence_level": 3,
+          "rationale_th": "มีการทดสอบความแม่นยำ (accuracy) และกรณีที่ระบบล้มเหลว (failure cases)",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e005",
+              "quote": "เก็บ requirement จาก business users และทดสอบ accuracy กับ failure cases",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "experience.production",
+          "criterion_name": "Production deployment and engineering collaboration",
+          "category": "experience",
+          "score": 0.0,
+          "max_score": 7,
+          "evidence_level": 0,
+          "rationale_th": "ระบุชัดเจนว่ายังไม่ deploy production แม้จะทำงานร่วมกับ software engineers แล้วก็ตาม",
+          "gap_th": "ยังไม่มีประสบการณ์นำ AI application ขึ้นสู่ production",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "category": "skills",
+      "score": 18.75,
+      "max_score": 25,
+      "strengths": [
+        "Python",
+        "Prompt engineering",
+        "Context engineering",
+        "Analytical problem solving",
+        "Communication and collaboration"
+      ],
+      "gaps": [],
+      "criteria": [
+        {
+          "criterion_id": "skills.python",
+          "criterion_name": "Python",
+          "category": "skills",
+          "score": 6.0,
+          "max_score": 8,
+          "evidence_level": 3,
+          "rationale_th": "พัฒนา Python REST API สำหรับงานวิเคราะห์ข้อมูลจริง",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e003",
+              "quote": "พัฒนา Python REST API และ SQL dashboard เพื่อใช้ในงานวิเคราะห์ข้อมูลจริง",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "skills.prompt_engineering",
+          "criterion_name": "Prompt engineering",
+          "category": "skills",
+          "score": 4.5,
+          "max_score": 6,
+          "evidence_level": 3,
+          "rationale_th": "มีการออกแบบ prompt สำหรับขอบเขตโครงการในการพัฒนา internal Gemini assistant",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e004",
+              "quote": "พัฒนา internal Gemini assistant โดยออกแบบ prompt และ context สำหรับขอบเขตโครงการ",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "skills.context_engineering",
+          "criterion_name": "Context engineering",
+          "category": "skills",
+          "score": 3.75,
+          "max_score": 5,
+          "evidence_level": 3,
+          "rationale_th": "มีการออกแบบ context สำหรับขอบเขตโครงการของ internal Gemini assistant",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e004",
+              "quote": "พัฒนา internal Gemini assistant โดยออกแบบ prompt และ context สำหรับขอบเขตโครงการ",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "skills.problem_solving",
+          "criterion_name": "Analytical problem solving",
+          "category": "skills",
+          "score": 2.25,
+          "max_score": 3,
+          "evidence_level": 3,
+          "rationale_th": "มีการวิเคราะห์ข้อมูลและทดสอบ failure cases ของระบบ",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e003",
+              "quote": "พัฒนา Python REST API และ SQL dashboard เพื่อใช้ในงานวิเคราะห์ข้อมูลจริง",
+              "page": 1,
+              "source_section": "other"
+            },
+            {
+              "id": "p1-e005",
+              "quote": "เก็บ requirement จาก business users และทดสอบ accuracy กับ failure cases",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "skills.collaboration",
+          "criterion_name": "Communication and collaboration",
+          "category": "skills",
+          "score": 2.25,
+          "max_score": 3,
+          "evidence_level": 3,
+          "rationale_th": "ทำงานร่วมกับ business users และ software engineers",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e005",
+              "quote": "เก็บ requirement จาก business users และทดสอบ accuracy กับ failure cases",
+              "page": 1,
+              "source_section": "other"
+            },
+            {
+              "id": "p1-e006",
+              "quote": "ทำงานร่วมกับ software engineers เพื่อเชื่อม JSON API แต่ยังไม่ deploy production",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "knowledge",
+      "score": 9.75,
+      "max_score": 20,
+      "strengths": [
+        "LLM and generative AI"
+      ],
+      "gaps": [
+        "Automation and data-driven architecture"
+      ],
+      "criteria": [
+        {
+          "criterion_id": "knowledge.llm",
+          "criterion_name": "LLM and generative AI",
+          "category": "knowledge",
+          "score": 5.25,
+          "max_score": 7,
+          "evidence_level": 3,
+          "rationale_th": "มีประสบการณ์พัฒนา internal Gemini assistant และออกแบบ prompt กับ context",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e004",
+              "quote": "พัฒนา internal Gemini assistant โดยออกแบบ prompt และ context สำหรับขอบเขตโครงการ",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "knowledge.nlp",
+          "criterion_name": "Natural language processing",
+          "category": "knowledge",
+          "score": 2.5,
+          "max_score": 5,
+          "evidence_level": 2,
+          "rationale_th": "เรียน NLP จากหลักสูตรออนไลน์",
+          "gap_th": "ยังขาดการประยุกต์ใช้ NLP ในงานระดับ professional",
+          "evidence": [
+            {
+              "id": "p1-e007",
+              "quote": "เรียน machine learning และ NLP จากหลักสูตรออนไลน์ และใช้ Docker ใน local environment",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "knowledge.ml",
+          "criterion_name": "Machine-learning fundamentals",
+          "category": "knowledge",
+          "score": 2.0,
+          "max_score": 4,
+          "evidence_level": 2,
+          "rationale_th": "เรียน machine learning จากหลักสูตรออนไลน์",
+          "gap_th": "ยังขาดประสบการณ์ประยุกต์ใช้ ML ในงานจริง",
+          "evidence": [
+            {
+              "id": "p1-e007",
+              "quote": "เรียน machine learning และ NLP จากหลักสูตรออนไลน์ และใช้ Docker ใน local environment",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "knowledge.automation",
+          "criterion_name": "Automation and data-driven architecture",
+          "category": "knowledge",
+          "score": 0.0,
+          "max_score": 4,
+          "evidence_level": 0,
+          "rationale_th": "ระบุชัดเจนว่ายังไม่มีหลักฐาน n8n หรือ Cloud platform และไม่มีหลักฐาน automation อื่นๆ",
+          "gap_th": "ยังไม่มีหลักฐานความรู้เรื่อง automation",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "category": "tools",
+      "score": 10.0,
+      "max_score": 20,
+      "strengths": [
+        "API and JSON",
+        "LLM API or SDK",
+        "SQL"
+      ],
+      "gaps": [
+        "n8n or automation pipeline",
+        "Cloud platform"
+      ],
+      "criteria": [
+        {
+          "criterion_id": "tools.api_json",
+          "criterion_name": "API and JSON",
+          "category": "tools",
+          "score": 4.5,
+          "max_score": 6,
+          "evidence_level": 3,
+          "rationale_th": "พัฒนา Python REST API และเชื่อม JSON API",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e003",
+              "quote": "พัฒนา Python REST API และ SQL dashboard เพื่อใช้ในงานวิเคราะห์ข้อมูลจริง",
+              "page": 1,
+              "source_section": "other"
+            },
+            {
+              "id": "p1-e006",
+              "quote": "ทำงานร่วมกับ software engineers เพื่อเชื่อม JSON API แต่ยังไม่ deploy production",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "tools.llm_sdk",
+          "criterion_name": "LLM API or SDK",
+          "category": "tools",
+          "score": 3.0,
+          "max_score": 4,
+          "evidence_level": 3,
+          "rationale_th": "พัฒนา internal Gemini assistant ซึ่งบ่งบอกถึงการใช้งาน LLM API/SDK",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e004",
+              "quote": "พัฒนา internal Gemini assistant โดยออกแบบ prompt และ context สำหรับขอบเขตโครงการ",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "tools.automation",
+          "criterion_name": "n8n or automation pipeline",
+          "category": "tools",
+          "score": 0.0,
+          "max_score": 3,
+          "evidence_level": 0,
+          "rationale_th": "ระบุชัดเจนว่ายังไม่มีหลักฐาน n8n",
+          "gap_th": "ยังไม่มีเครื่องมือ automation",
+          "evidence": []
+        },
+        {
+          "criterion_id": "tools.sql",
+          "criterion_name": "SQL",
+          "category": "tools",
+          "score": 1.5,
+          "max_score": 2,
+          "evidence_level": 3,
+          "rationale_th": "พัฒนา SQL dashboard เพื่อใช้ในงานวิเคราะห์ข้อมูลจริง",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e003",
+              "quote": "พัฒนา Python REST API และ SQL dashboard เพื่อใช้ในงานวิเคราะห์ข้อมูลจริง",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "tools.docker",
+          "criterion_name": "Docker",
+          "category": "tools",
+          "score": 1.0,
+          "max_score": 2,
+          "evidence_level": 2,
+          "rationale_th": "ใช้ Docker ใน local environment",
+          "gap_th": "ยังขาดการใช้งาน Docker ในระดับ production",
+          "evidence": [
+            {
+              "id": "p1-e007",
+              "quote": "เรียน machine learning และ NLP จากหลักสูตรออนไลน์ และใช้ Docker ใน local environment",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        },
+        {
+          "criterion_id": "tools.cloud",
+          "criterion_name": "Cloud platform",
+          "category": "tools",
+          "score": 0.0,
+          "max_score": 3,
+          "evidence_level": 0,
+          "rationale_th": "ระบุชัดเจนว่ายังไม่มี Cloud platform",
+          "gap_th": "ยังไม่มีประสบการณ์ใช้งาน Cloud platform",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "category": "education",
+      "score": 2.5,
+      "max_score": 5,
+      "strengths": [],
+      "gaps": [],
+      "criteria": [
+        {
+          "criterion_id": "education.relevant",
+          "criterion_name": "Relevant education or training",
+          "category": "education",
+          "score": 2.5,
+          "max_score": 5,
+          "evidence_level": 2,
+          "rationale_th": "ผ่านการเรียนหลักสูตรออนไลน์ด้าน machine learning และ NLP",
+          "gap_th": "ยังไม่มีปริญญาหรือการรับรองในสายงานที่เกี่ยวข้องโดยตรง",
+          "evidence": [
+            {
+              "id": "p1-e007",
+              "quote": "เรียน machine learning และ NLP จากหลักสูตรออนไลน์ และใช้ Docker ใน local environment",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "model": "gemini-3.5-flash-lite",
+    "evidence_catalog_version": "1.0",
+    "matching_prompt_version": "2.2",
+    "rubric_version": "1.0",
+    "analysis_language": "th",
+    "processing_time_ms": 8194,
+    "llm_request_count": 1,
+    "input_tokens": 1657,
+    "output_tokens": 1719
+  },
+  "decision_support_notice": "ผลลัพธ์นี้เป็นเครื่องมือช่วยประเมินและควรได้รับการทบทวนโดยมนุษย์"
+}
