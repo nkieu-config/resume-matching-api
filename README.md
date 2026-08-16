@@ -8,15 +8,15 @@ Built with Python, FastAPI, Pydantic, pypdf, and Gemini 3.5 Flash-Lite.
 
 ```mermaid
 flowchart TD
-    A["Upload resume PDF"] --> B["Validate PDF and extract text"]
-    B -->|"Invalid or unsupported PDF"| X["Return 4xx JSON error"]
-    B -->|"Valid PDF"| C["Build page-linked evidence catalog"]
-    C --> D["Match evidence against the fixed rubric with Gemini"]
-    D --> E["Validate structured response and evidence references"]
-    E -->|"Invalid response and retry available"| D
-    E -->|"Valid response"| F["Calculate scores in Python"]
-    F --> G["Return JSON result"]
-    E -->|"Invalid after retry"| Y["Return 502 JSON error"]
+    A["Upload resume PDF"] --> B["Validate PDF & extract text (pypdf)"]
+    B -->|"Invalid or unreadable PDF"| X["Return 4xx client error"]
+    B -->|"Valid PDF"| C["Build page-linked evidence catalog (Python)"]
+    C --> D["Match evidence against rubric (Gemini 3.5 Flash-Lite)"]
+    D --> E["Validate structured response & evidence IDs"]
+    E -->|"Invalid schema (retry max 1)"| D
+    E -->|"Failed after retry"| Y["Return 502 upstream error"]
+    E -->|"Valid response"| F["Calculate scores in Python (Weight × Level ÷ 4)"]
+    F --> G["Return JSON result (200 OK)"]
 ```
 
 Python creates the evidence catalog before the LLM call, so every evidence item has a stable ID, page number, and verified quote from the extracted resume text. Gemini receives this catalog and the fixed rubric instead of the original PDF. A valid response normally uses one Gemini request; invalid structured output can be retried once.
