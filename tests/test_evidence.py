@@ -12,6 +12,7 @@ def test_builder_creates_stable_page_ordered_chunks() -> None:
     second = build_evidence_catalog(page_texts)
 
     assert first == second
+    assert first.version == "1.1"
     assert [item.id for item in first.items] == [
         "p1-e001",
         "p1-e002",
@@ -47,3 +48,23 @@ def test_builder_splits_oversized_blocks_without_changing_word_order() -> None:
     assert len(catalog.items) > 1
     assert all(len(item.quote) <= 1000 for item in catalog.items)
     assert " ".join(item.quote for item in catalog.items) == source
+
+
+def test_project_heading_after_bullet_starts_a_new_evidence_block() -> None:
+    page_text = (
+        "Projects\n"
+        "• Deployed an API with automated checks\n"
+        "DentalOps|Scheduling Platform GitHub\n"
+        "React·TypeScript·PostgreSQL·Docker\n"
+        "• Shipped a scheduling workflow"
+    )
+
+    catalog = build_evidence_catalog((page_text,))
+
+    assert [item.quote for item in catalog.items] == [
+        "Projects",
+        "• Deployed an API with automated checks",
+        "DentalOps|Scheduling Platform GitHub",
+        "React·TypeScript·PostgreSQL·Docker",
+        "• Shipped a scheduling workflow",
+    ]

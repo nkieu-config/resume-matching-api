@@ -56,7 +56,10 @@ def make_pdf() -> ValidatedPdf:
 @pytest.mark.anyio
 async def test_analysis_uses_one_matching_call_and_assembles_scores() -> None:
     rubric = make_rubric()
-    provider = FakeAnalyzer([MatchingOutput(make_matching(rubric, 4), ProviderUsage(100, 40))])
+    matching = make_matching(rubric, 4)
+    for assessment in matching.assessments:
+        assessment.evidence_ids = ["p1-e002"]
+    provider = FakeAnalyzer([MatchingOutput(matching, ProviderUsage(100, 40))])
     service = AnalysisService(
         provider=provider,
         rubric=rubric,
@@ -75,7 +78,8 @@ async def test_analysis_uses_one_matching_call_and_assembles_scores() -> None:
     assert result.metadata.input_tokens == 100
     assert result.metadata.output_tokens == 40
     assert result.metadata.llm_request_count == 1
-    assert result.metadata.evidence_catalog_version == "1.0"
+    assert result.metadata.evidence_catalog_version == "1.1"
+    assert result.metadata.matching_prompt_version == "2.3"
     assert len(result.category_scores) == 5
     assert provider.feedback == [None]
     assert provider.catalogs[0].items[1].quote.startswith("Built and evaluated")

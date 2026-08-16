@@ -1,7 +1,7 @@
 from io import BytesIO
 
 from fastapi import UploadFile
-from pypdf import PdfReader
+from pypdf import PageObject, PdfReader
 from pypdf.errors import PdfReadError
 
 from resume_matcher.config import Settings
@@ -36,16 +36,16 @@ async def validate_pdf(upload: UploadFile, settings: Settings) -> ValidatedPdf:
         if reader.is_encrypted:
             raise InvalidPdfError("encrypted PDFs are not supported")
         page_count = len(reader.pages)
-        page_texts = tuple(page.extract_text() or "" for page in reader.pages)
+        if page_count == 0:
+            raise InvalidPdfError("PDF must contain at least one page")
+        if page_count > settings.max_pdf_pages:
+            raise InvalidPdfError(f"PDF contains more than {settings.max_pdf_pages} pages")
+        page_texts = tuple(_extract_page_text(page) for page in reader.pages)
     except InvalidPdfError:
         raise
     except (PdfReadError, OSError, ValueError) as exc:
         raise InvalidPdfError("PDF is corrupt or unreadable") from exc
 
-    if page_count == 0:
-        raise InvalidPdfError("PDF must contain at least one page")
-    if page_count > settings.max_pdf_pages:
-        raise InvalidPdfError(f"PDF contains more than {settings.max_pdf_pages} pages")
     if not any(text.strip() for text in page_texts):
         raise PdfTextUnavailableError("PDF does not contain extractable resume text")
 
@@ -55,3 +55,10 @@ async def validate_pdf(upload: UploadFile, settings: Settings) -> ValidatedPdf:
         filename=upload.filename or "resume.pdf",
         page_texts=page_texts,
     )
+
+
+def _extract_page_text(page: PageObject) -> str:
+    if page.get_contents() is None:
+        return ""
+    text = page.extract_text(extraction_mode="layout") or ""
+    return f"{text.rstrip()}\n" if text.strip() else ""

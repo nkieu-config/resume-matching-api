@@ -40,6 +40,15 @@ def build_text_pdf() -> bytes:
     return output.getvalue()
 
 
+def build_positioned_text_pdf() -> bytes:
+    output = BytesIO()
+    canvas = Canvas(output)
+    canvas.drawString(72, 720, "Elliott W")
+    canvas.drawString(116, 720, "ave Lab")
+    canvas.save()
+    return output.getvalue()
+
+
 def make_upload(data: bytes, content_type: str = "application/pdf") -> UploadFile:
     return UploadFile(
         file=BytesIO(data),
@@ -76,6 +85,13 @@ async def test_valid_pdf_returns_extractable_text_by_page() -> None:
     result = await validate_pdf(make_upload(build_text_pdf()), Settings(_env_file=None))
 
     assert result.page_texts == ("Built a Python API\n", "Deployed with Docker\n")
+
+
+@pytest.mark.anyio
+async def test_positioned_text_is_extracted_in_reading_order() -> None:
+    result = await validate_pdf(make_upload(build_positioned_text_pdf()), Settings(_env_file=None))
+
+    assert result.page_texts == ("Elliott Wave Lab\n",)
 
 
 @pytest.mark.anyio

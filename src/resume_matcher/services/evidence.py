@@ -70,6 +70,7 @@ def _blocks(
                     or continuation.startswith(BULLET_PREFIXES)
                     or SECTION_HEADINGS.get(continuation.casefold()) is not None
                     or _is_contact_line(continuation)
+                    or _is_project_heading(lines, index, section)
                 ):
                     break
                 parts.append(continuation)
@@ -78,6 +79,17 @@ def _blocks(
             continue
         blocks.append((line, section))
     return blocks
+
+
+def _is_project_heading(
+    lines: list[str],
+    index: int,
+    section: SourceSection,
+) -> bool:
+    line = lines[index]
+    if section is not SourceSection.PROJECTS or "|" not in line or not line.endswith("GitHub"):
+        return False
+    return index + 1 < len(lines) and "·" in lines[index + 1]
 
 
 def _is_contact_line(value: str) -> bool:

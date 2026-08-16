@@ -84,7 +84,7 @@ class AnalysisService:
             metadata=AnalysisMetadata(
                 model=self._settings.gemini_model,
                 evidence_catalog_version=catalog.version,
-                matching_prompt_version="2.2",
+                matching_prompt_version="2.3",
                 rubric_version=self._rubric.rubric_version,
                 processing_time_ms=elapsed_ms,
                 llm_request_count=request_count,

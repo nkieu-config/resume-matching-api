@@ -60,8 +60,8 @@ def make_analysis_result() -> AnalysisResult:
         category_scores=[],
         metadata=AnalysisMetadata(
             model="gemini-3.5-flash-lite",
-            evidence_catalog_version="1.0",
-            matching_prompt_version="2.2",
+            evidence_catalog_version="1.1",
+            matching_prompt_version="2.3",
             rubric_version="1.0",
             processing_time_ms=100,
             llm_request_count=1,

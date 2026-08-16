@@ -41,7 +41,7 @@ class EvidenceChunk(StrictModel):
 
 
 class EvidenceCatalog(StrictModel):
-    version: str = "1.0"
+    version: str = "1.1"
     items: list[EvidenceChunk] = Field(min_length=1)
 
     @model_validator(mode="after")
