@@ -2,12 +2,13 @@ from pathlib import Path
 
 import pytest
 
+from resume_matcher.config import Settings
 from resume_matcher.domain.errors import RubricConfigurationError
 from resume_matcher.domain.rubric import load_rubric
 
 
 def test_fixed_rubric_contains_required_categories_and_total_weight() -> None:
-    rubric = load_rubric(Path("config/ai_data_solution_rubric.yaml"))
+    rubric = load_rubric(Settings(_env_file=None).rubric_path)
 
     assert rubric.job_title == "AI & Data Solution"
     assert sum(criterion.weight for criterion in rubric.criteria) == 100

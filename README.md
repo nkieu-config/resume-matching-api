@@ -60,6 +60,8 @@ uv run uvicorn resume_matcher.main:app --reload
 
 Set `GEMINI_API_KEY` in `.env`, then open [Swagger UI](http://127.0.0.1:8000/docs).
 
+The service loads the AI & Data Solution rubric by default. Set `RUBRIC_PATH` to score against a different job description without changing code.
+
 Send a resume to the API:
 
 ```bash

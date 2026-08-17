@@ -36,7 +36,7 @@ async def test_live_resume_evaluation(expectation: dict[str, object]) -> None:
     pdf = await validate_pdf(upload, settings)
     service = AnalysisService(
         GeminiResumeAnalyzer(settings),
-        load_rubric(Path("config/ai_data_solution_rubric.yaml")),
+        load_rubric(settings.rubric_path),
         settings,
     )
 

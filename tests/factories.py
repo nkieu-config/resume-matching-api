@@ -1,5 +1,4 @@
-from pathlib import Path
-
+from resume_matcher.config import DEFAULT_RUBRIC_PATH
 from resume_matcher.domain.models import (
     AnalysisMetadata,
     AnalysisResult,
@@ -17,7 +16,7 @@ from resume_matcher.domain.rubric import load_rubric
 
 
 def make_rubric() -> RubricConfig:
-    return load_rubric(Path("config/ai_data_solution_rubric.yaml"))
+    return load_rubric(DEFAULT_RUBRIC_PATH)
 
 
 def make_catalog() -> EvidenceCatalog:
@@ -60,7 +59,7 @@ def make_analysis_result() -> AnalysisResult:
         category_scores=[],
         metadata=AnalysisMetadata(
             model="gemini-3.5-flash-lite",
-            evidence_catalog_version="1.1",
+            evidence_catalog_version="1.2",
             matching_prompt_version="2.3",
             rubric_version="1.0",
             processing_time_ms=100,

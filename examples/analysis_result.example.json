@@ -1,47 +1,46 @@
 {
-  "analysis_id": "b7bff44c8510422190809d888cc8dfb1",
+  "analysis_id": "dc7fbe6d999e4e3aa8eeed365a9c64e2",
   "job": {
     "title": "AI & Data Solution",
     "jd_version": "1.0"
   },
   "result": {
-    "overall_score": 58.25,
-    "match_band": "PARTIAL_MATCH",
-    "summary": "ผลการจับคู่อยู่ในระดับ PARTIAL_MATCH โดยหมวดที่เด่นที่สุดคือ skills และประเด็นที่ควรตรวจสอบเพิ่มเติมคือ Production deployment and engineering collaboration, n8n or automation pipeline, Cloud platform"
+    "overall_score": 100.0,
+    "match_band": "STRONG_MATCH",
+    "summary": "ผลการจับคู่อยู่ในระดับ STRONG_MATCH โดยหมวดที่เด่นที่สุดคือ experience และประเด็นที่ควรตรวจสอบเพิ่มเติมคือ ไม่พบช่องว่างหลักจากข้อมูลใน Resume"
   },
   "category_scores": [
     {
       "category": "experience",
-      "score": 17.25,
+      "score": 30.0,
       "max_score": 30,
       "strengths": [
         "AI application delivery",
         "Requirement gathering and stakeholder work",
-        "Testing and evaluation"
-      ],
-      "gaps": [
+        "Testing and evaluation",
         "Production deployment and engineering collaboration"
       ],
+      "gaps": [],
       "criteria": [
         {
           "criterion_id": "experience.ai_delivery",
           "criterion_name": "AI application delivery",
           "category": "experience",
-          "score": 7.5,
+          "score": 10.0,
           "max_score": 10,
-          "evidence_level": 3,
-          "rationale_th": "มีประสบการณ์พัฒนาภายในโครงการ AI เช่น internal Gemini assistant โดยมีการออกแบบ prompt และ context",
-          "gap_th": "ยังขาดหลักฐานการส่งมอบงานระดับ production เต็มรูปแบบ",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครมีความสามารถในการส่งมอบระบบ AI ในระดับมืออาชีพอย่างแข็งแกร่ง โดยเป็นเจ้าของความรับผิดชอบในการส่งมอบระบบ AI ในการผลิตถึงหกระบบ",
+          "gap_th": null,
           "evidence": [
             {
               "id": "p1-e002",
-              "quote": "Data Analyst และ AI Project Developer | ประสบการณ์ 2 ปี",
+              "quote": "AI Solution Engineer | 5 years",
               "page": 1,
               "source_section": "other"
             },
             {
-              "id": "p1-e004",
-              "quote": "พัฒนา internal Gemini assistant โดยออกแบบ prompt และ context สำหรับขอบเขตโครงการ",
+              "id": "p1-e003",
+              "quote": "Led 12 stakeholder workshops and owned requirements for six production AI systems.",
               "page": 1,
               "source_section": "other"
             }
@@ -51,15 +50,15 @@
           "criterion_id": "experience.requirements",
           "criterion_name": "Requirement gathering and stakeholder work",
           "category": "experience",
-          "score": 4.5,
+          "score": 6.0,
           "max_score": 6,
-          "evidence_level": 3,
-          "rationale_th": "มีประสบการณ์เก็บ requirement จาก business users และทดสอบ accuracy กับ failure cases",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครมีประสบการณ์ทำงานกับผู้มีส่วนได้ส่วนเสียในระดับมืออาชีพ โดยได้นำการประชุมเชิงปฏิบัติการกับผู้มีส่วนได้ส่วนเสียจำนวน 12 ครั้ง",
           "gap_th": null,
           "evidence": [
             {
-              "id": "p1-e005",
-              "quote": "เก็บ requirement จาก business users และทดสอบ accuracy กับ failure cases",
+              "id": "p1-e003",
+              "quote": "Led 12 stakeholder workshops and owned requirements for six production AI systems.",
               "page": 1,
               "source_section": "other"
             }
@@ -69,15 +68,21 @@
           "criterion_id": "experience.evaluation",
           "criterion_name": "Testing and evaluation",
           "category": "experience",
-          "score": 5.25,
+          "score": 7.0,
           "max_score": 7,
-          "evidence_level": 3,
-          "rationale_th": "มีการทดสอบความแม่นยำ (accuracy) และกรณีที่ระบบล้มเหลว (failure cases)",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครมีการทดสอบและประเมินผล AI ในระดับมืออาชีพ โดยได้ปรับปรุงความแม่นยำของคำตอบที่มีการอ้างอิงจากการประเมินพร้อมท์ และนำการประเมินความล้มเหลวจำนวน 500 เคส",
           "gap_th": null,
           "evidence": [
             {
               "id": "p1-e005",
-              "quote": "เก็บ requirement จาก business users และทดสอบ accuracy กับ failure cases",
+              "quote": "Improved grounded-answer accuracy from 72 to 91 percent through prompt evaluation.",
+              "page": 1,
+              "source_section": "other"
+            },
+            {
+              "id": "p1-e006",
+              "quote": "Built NLP and machine-learning pipelines and led a 500-case failure evaluation.",
               "page": 1,
               "source_section": "other"
             }
@@ -87,18 +92,31 @@
           "criterion_id": "experience.production",
           "criterion_name": "Production deployment and engineering collaboration",
           "category": "experience",
-          "score": 0.0,
+          "score": 7.0,
           "max_score": 7,
-          "evidence_level": 0,
-          "rationale_th": "ระบุชัดเจนว่ายังไม่ deploy production แม้จะทำงานร่วมกับ software engineers แล้วก็ตาม",
-          "gap_th": "ยังไม่มีประสบการณ์นำ AI application ขึ้นสู่ production",
-          "evidence": []
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครมีการนำระบบขึ้นสู่การผลิตร่วมกับวิศวกรซอฟต์แวร์และรักษาระดับความพร้อมใช้งานที่ 99.9 เปอร์เซ็นต์ พร้อมทั้งเป็นเจ้าของระบบ AI ในการผลิตจำนวนหกระบบ",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e003",
+              "quote": "Led 12 stakeholder workshops and owned requirements for six production AI systems.",
+              "page": 1,
+              "source_section": "other"
+            },
+            {
+              "id": "p1-e008",
+              "quote": "Led production deployment with software engineers and maintained 99.9 percent availability.",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
         }
       ]
     },
     {
       "category": "skills",
-      "score": 18.75,
+      "score": 25.0,
       "max_score": 25,
       "strengths": [
         "Python",
@@ -113,15 +131,15 @@
           "criterion_id": "skills.python",
           "criterion_name": "Python",
           "category": "skills",
-          "score": 6.0,
+          "score": 8.0,
           "max_score": 8,
-          "evidence_level": 3,
-          "rationale_th": "พัฒนา Python REST API สำหรับงานวิเคราะห์ข้อมูลจริง",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครมีความเชี่ยวชาญระดับมืออาชีพในการเขียน Python สำหรับการส่งมอบแอปพลิเคชัน LLM",
           "gap_th": null,
           "evidence": [
             {
-              "id": "p1-e003",
-              "quote": "พัฒนา Python REST API และ SQL dashboard เพื่อใช้ในงานวิเคราะห์ข้อมูลจริง",
+              "id": "p1-e004",
+              "quote": "Led Python LLM application delivery using prompt engineering and context engineering.",
               "page": 1,
               "source_section": "other"
             }
@@ -131,15 +149,21 @@
           "criterion_id": "skills.prompt_engineering",
           "criterion_name": "Prompt engineering",
           "category": "skills",
-          "score": 4.5,
+          "score": 6.0,
           "max_score": 6,
-          "evidence_level": 3,
-          "rationale_th": "มีการออกแบบ prompt สำหรับขอบเขตโครงการในการพัฒนา internal Gemini assistant",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครใช้การออกแบบพร้อมท์เพื่อส่งมอบแอปพลิเคชัน LLM และประเมินพร้อมท์เพื่อปรับปรุงความแม่นยำ",
           "gap_th": null,
           "evidence": [
             {
               "id": "p1-e004",
-              "quote": "พัฒนา internal Gemini assistant โดยออกแบบ prompt และ context สำหรับขอบเขตโครงการ",
+              "quote": "Led Python LLM application delivery using prompt engineering and context engineering.",
+              "page": 1,
+              "source_section": "other"
+            },
+            {
+              "id": "p1-e005",
+              "quote": "Improved grounded-answer accuracy from 72 to 91 percent through prompt evaluation.",
               "page": 1,
               "source_section": "other"
             }
@@ -149,15 +173,15 @@
           "criterion_id": "skills.context_engineering",
           "criterion_name": "Context engineering",
           "category": "skills",
-          "score": 3.75,
+          "score": 5.0,
           "max_score": 5,
-          "evidence_level": 3,
-          "rationale_th": "มีการออกแบบ context สำหรับขอบเขตโครงการของ internal Gemini assistant",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครมีความเชี่ยวชาญระดับมืออาชีพในการใช้ context engineering ควบคู่กับการส่งมอบแอปพลิเคชัน Python LLM",
           "gap_th": null,
           "evidence": [
             {
               "id": "p1-e004",
-              "quote": "พัฒนา internal Gemini assistant โดยออกแบบ prompt และ context สำหรับขอบเขตโครงการ",
+              "quote": "Led Python LLM application delivery using prompt engineering and context engineering.",
               "page": 1,
               "source_section": "other"
             }
@@ -167,21 +191,21 @@
           "criterion_id": "skills.problem_solving",
           "criterion_name": "Analytical problem solving",
           "category": "skills",
-          "score": 2.25,
+          "score": 3.0,
           "max_score": 3,
-          "evidence_level": 3,
-          "rationale_th": "มีการวิเคราะห์ข้อมูลและทดสอบ failure cases ของระบบ",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครแสดงการวิเคราะห์เชิงโครงสร้างและการแก้ปัญหาผ่านการประเมินความล้มเหลว 500 เคส และการปรับปรุงความแม่นยำ",
           "gap_th": null,
           "evidence": [
             {
-              "id": "p1-e003",
-              "quote": "พัฒนา Python REST API และ SQL dashboard เพื่อใช้ในงานวิเคราะห์ข้อมูลจริง",
+              "id": "p1-e005",
+              "quote": "Improved grounded-answer accuracy from 72 to 91 percent through prompt evaluation.",
               "page": 1,
               "source_section": "other"
             },
             {
-              "id": "p1-e005",
-              "quote": "เก็บ requirement จาก business users และทดสอบ accuracy กับ failure cases",
+              "id": "p1-e006",
+              "quote": "Built NLP and machine-learning pipelines and led a 500-case failure evaluation.",
               "page": 1,
               "source_section": "other"
             }
@@ -191,21 +215,21 @@
           "criterion_id": "skills.collaboration",
           "criterion_name": "Communication and collaboration",
           "category": "skills",
-          "score": 2.25,
+          "score": 3.0,
           "max_score": 3,
-          "evidence_level": 3,
-          "rationale_th": "ทำงานร่วมกับ business users และ software engineers",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครสื่อสารข้อกำหนดและทำงานร่วมกันข้ามสายงานธุรกิจและวิศวกรรมผ่านการนำเวิร์กช็อปกับผู้มีส่วนได้ส่วนเสียและการร่วมมือกับวิศวกรซอฟต์แวร์",
           "gap_th": null,
           "evidence": [
             {
-              "id": "p1-e005",
-              "quote": "เก็บ requirement จาก business users และทดสอบ accuracy กับ failure cases",
+              "id": "p1-e003",
+              "quote": "Led 12 stakeholder workshops and owned requirements for six production AI systems.",
               "page": 1,
               "source_section": "other"
             },
             {
-              "id": "p1-e006",
-              "quote": "ทำงานร่วมกับ software engineers เพื่อเชื่อม JSON API แต่ยังไม่ deploy production",
+              "id": "p1-e008",
+              "quote": "Led production deployment with software engineers and maintained 99.9 percent availability.",
               "page": 1,
               "source_section": "other"
             }
@@ -215,28 +239,35 @@
     },
     {
       "category": "knowledge",
-      "score": 9.75,
+      "score": 20.0,
       "max_score": 20,
       "strengths": [
-        "LLM and generative AI"
-      ],
-      "gaps": [
+        "LLM and generative AI",
+        "Natural language processing",
+        "Machine-learning fundamentals",
         "Automation and data-driven architecture"
       ],
+      "gaps": [],
       "criteria": [
         {
           "criterion_id": "knowledge.llm",
           "criterion_name": "LLM and generative AI",
           "category": "knowledge",
-          "score": 5.25,
+          "score": 7.0,
           "max_score": 7,
-          "evidence_level": 3,
-          "rationale_th": "มีประสบการณ์พัฒนา internal Gemini assistant และออกแบบ prompt กับ context",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครมีความเข้าใจเชิงลึกและประสบการณ์การประยุกต์ใช้ LLM และ Generative AI ในระดับมืออาชีพ",
           "gap_th": null,
           "evidence": [
             {
               "id": "p1-e004",
-              "quote": "พัฒนา internal Gemini assistant โดยออกแบบ prompt และ context สำหรับขอบเขตโครงการ",
+              "quote": "Led Python LLM application delivery using prompt engineering and context engineering.",
+              "page": 1,
+              "source_section": "other"
+            },
+            {
+              "id": "p1-e007",
+              "quote": "Owned FastAPI and JSON integrations with Gemini and OpenAI SDKs at 10,000 requests per day.",
               "page": 1,
               "source_section": "other"
             }
@@ -246,15 +277,21 @@
           "criterion_id": "knowledge.nlp",
           "criterion_name": "Natural language processing",
           "category": "knowledge",
-          "score": 2.5,
+          "score": 5.0,
           "max_score": 5,
-          "evidence_level": 2,
-          "rationale_th": "เรียน NLP จากหลักสูตรออนไลน์",
-          "gap_th": "ยังขาดการประยุกต์ใช้ NLP ในงานระดับ professional",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครสร้างและใช้งาน NLP รวมถึงมีใบรับรองที่เกี่ยวข้องกับ NLP",
+          "gap_th": null,
           "evidence": [
             {
-              "id": "p1-e007",
-              "quote": "เรียน machine learning และ NLP จากหลักสูตรออนไลน์ และใช้ Docker ใน local environment",
+              "id": "p1-e006",
+              "quote": "Built NLP and machine-learning pipelines and led a 500-case failure evaluation.",
+              "page": 1,
+              "source_section": "other"
+            },
+            {
+              "id": "p1-e010",
+              "quote": "Relevant education: MSc Data Science and applied NLP certification.",
               "page": 1,
               "source_section": "other"
             }
@@ -264,15 +301,15 @@
           "criterion_id": "knowledge.ml",
           "criterion_name": "Machine-learning fundamentals",
           "category": "knowledge",
-          "score": 2.0,
+          "score": 4.0,
           "max_score": 4,
-          "evidence_level": 2,
-          "rationale_th": "เรียน machine learning จากหลักสูตรออนไลน์",
-          "gap_th": "ยังขาดประสบการณ์ประยุกต์ใช้ ML ในงานจริง",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครสร้างและใช้งาน pipelines ด้าน Machine Learning พร้อมทั้งการประเมินผล",
+          "gap_th": null,
           "evidence": [
             {
-              "id": "p1-e007",
-              "quote": "เรียน machine learning และ NLP จากหลักสูตรออนไลน์ และใช้ Docker ใน local environment",
+              "id": "p1-e006",
+              "quote": "Built NLP and machine-learning pipelines and led a 500-case failure evaluation.",
               "page": 1,
               "source_section": "other"
             }
@@ -282,48 +319,49 @@
           "criterion_id": "knowledge.automation",
           "criterion_name": "Automation and data-driven architecture",
           "category": "knowledge",
-          "score": 0.0,
+          "score": 4.0,
           "max_score": 4,
-          "evidence_level": 0,
-          "rationale_th": "ระบุชัดเจนว่ายังไม่มีหลักฐาน n8n หรือ Cloud platform และไม่มีหลักฐาน automation อื่นๆ",
-          "gap_th": "ยังไม่มีหลักฐานความรู้เรื่อง automation",
-          "evidence": []
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครมีความเข้าใจและการออกแบบโซลูชันที่ขับเคลื่อนด้วยระบบอัตโนมัติและข้อมูล โดยสร้าง n8n และ CI pipelines ที่ช่วยลดเวลาการปล่อยงาน",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e009",
+              "quote": "Built n8n, SQL, Docker, Cloud Run, and CI pipelines that reduced release time by 70 percent.",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
         }
       ]
     },
     {
       "category": "tools",
-      "score": 10.0,
+      "score": 20.0,
       "max_score": 20,
       "strengths": [
         "API and JSON",
         "LLM API or SDK",
-        "SQL"
-      ],
-      "gaps": [
         "n8n or automation pipeline",
+        "SQL",
+        "Docker",
         "Cloud platform"
       ],
+      "gaps": [],
       "criteria": [
         {
           "criterion_id": "tools.api_json",
           "criterion_name": "API and JSON",
           "category": "tools",
-          "score": 4.5,
+          "score": 6.0,
           "max_score": 6,
-          "evidence_level": 3,
-          "rationale_th": "พัฒนา Python REST API และเชื่อม JSON API",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครใช้งาน FastAPI และ JSON integrations ร่วมกับ Gemini และ OpenAI SDKs",
           "gap_th": null,
           "evidence": [
             {
-              "id": "p1-e003",
-              "quote": "พัฒนา Python REST API และ SQL dashboard เพื่อใช้ในงานวิเคราะห์ข้อมูลจริง",
-              "page": 1,
-              "source_section": "other"
-            },
-            {
-              "id": "p1-e006",
-              "quote": "ทำงานร่วมกับ software engineers เพื่อเชื่อม JSON API แต่ยังไม่ deploy production",
+              "id": "p1-e007",
+              "quote": "Owned FastAPI and JSON integrations with Gemini and OpenAI SDKs at 10,000 requests per day.",
               "page": 1,
               "source_section": "other"
             }
@@ -333,15 +371,15 @@
           "criterion_id": "tools.llm_sdk",
           "criterion_name": "LLM API or SDK",
           "category": "tools",
-          "score": 3.0,
+          "score": 4.0,
           "max_score": 4,
-          "evidence_level": 3,
-          "rationale_th": "พัฒนา internal Gemini assistant ซึ่งบ่งบอกถึงการใช้งาน LLM API/SDK",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครบูรณาการ LLM ผ่าน OpenAI SDKs และ Gemini",
           "gap_th": null,
           "evidence": [
             {
-              "id": "p1-e004",
-              "quote": "พัฒนา internal Gemini assistant โดยออกแบบ prompt และ context สำหรับขอบเขตโครงการ",
+              "id": "p1-e007",
+              "quote": "Owned FastAPI and JSON integrations with Gemini and OpenAI SDKs at 10,000 requests per day.",
               "page": 1,
               "source_section": "other"
             }
@@ -351,26 +389,33 @@
           "criterion_id": "tools.automation",
           "criterion_name": "n8n or automation pipeline",
           "category": "tools",
-          "score": 0.0,
+          "score": 3.0,
           "max_score": 3,
-          "evidence_level": 0,
-          "rationale_th": "ระบุชัดเจนว่ายังไม่มีหลักฐาน n8n",
-          "gap_th": "ยังไม่มีเครื่องมือ automation",
-          "evidence": []
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครสร้าง n8n และ CI pipelines สำหรับกระบวนการอัตโนมัติ",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e009",
+              "quote": "Built n8n, SQL, Docker, Cloud Run, and CI pipelines that reduced release time by 70 percent.",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
         },
         {
           "criterion_id": "tools.sql",
           "criterion_name": "SQL",
           "category": "tools",
-          "score": 1.5,
+          "score": 2.0,
           "max_score": 2,
-          "evidence_level": 3,
-          "rationale_th": "พัฒนา SQL dashboard เพื่อใช้ในงานวิเคราะห์ข้อมูลจริง",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครใช้งาน SQL ในการดำเนินงานระบบ",
           "gap_th": null,
           "evidence": [
             {
-              "id": "p1-e003",
-              "quote": "พัฒนา Python REST API และ SQL dashboard เพื่อใช้ในงานวิเคราะห์ข้อมูลจริง",
+              "id": "p1-e009",
+              "quote": "Built n8n, SQL, Docker, Cloud Run, and CI pipelines that reduced release time by 70 percent.",
               "page": 1,
               "source_section": "other"
             }
@@ -380,15 +425,15 @@
           "criterion_id": "tools.docker",
           "criterion_name": "Docker",
           "category": "tools",
-          "score": 1.0,
+          "score": 2.0,
           "max_score": 2,
-          "evidence_level": 2,
-          "rationale_th": "ใช้ Docker ใน local environment",
-          "gap_th": "ยังขาดการใช้งาน Docker ในระดับ production",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครแพ็กเกจและรันแอปพลิเคชันด้วย Docker",
+          "gap_th": null,
           "evidence": [
             {
-              "id": "p1-e007",
-              "quote": "เรียน machine learning และ NLP จากหลักสูตรออนไลน์ และใช้ Docker ใน local environment",
+              "id": "p1-e009",
+              "quote": "Built n8n, SQL, Docker, Cloud Run, and CI pipelines that reduced release time by 70 percent.",
               "page": 1,
               "source_section": "other"
             }
@@ -398,35 +443,44 @@
           "criterion_id": "tools.cloud",
           "criterion_name": "Cloud platform",
           "category": "tools",
-          "score": 0.0,
+          "score": 3.0,
           "max_score": 3,
-          "evidence_level": 0,
-          "rationale_th": "ระบุชัดเจนว่ายังไม่มี Cloud platform",
-          "gap_th": "ยังไม่มีประสบการณ์ใช้งาน Cloud platform",
-          "evidence": []
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครปรับใช้และดำเนินงานเวิร์กโหลดบน Cloud Run",
+          "gap_th": null,
+          "evidence": [
+            {
+              "id": "p1-e009",
+              "quote": "Built n8n, SQL, Docker, Cloud Run, and CI pipelines that reduced release time by 70 percent.",
+              "page": 1,
+              "source_section": "other"
+            }
+          ]
         }
       ]
     },
     {
       "category": "education",
-      "score": 2.5,
+      "score": 5.0,
       "max_score": 5,
-      "strengths": [],
+      "strengths": [
+        "Relevant education or training"
+      ],
       "gaps": [],
       "criteria": [
         {
           "criterion_id": "education.relevant",
           "criterion_name": "Relevant education or training",
           "category": "education",
-          "score": 2.5,
+          "score": 5.0,
           "max_score": 5,
-          "evidence_level": 2,
-          "rationale_th": "ผ่านการเรียนหลักสูตรออนไลน์ด้าน machine learning และ NLP",
-          "gap_th": "ยังไม่มีปริญญาหรือการรับรองในสายงานที่เกี่ยวข้องโดยตรง",
+          "evidence_level": 4,
+          "rationale_th": "ผู้สมัครสำเร็จการศึกษาระดับปริญญาโทสาขา Data Science (MSc Data Science) และมีใบรับรองวิชาชีพด้าน applied NLP ที่เกี่ยวข้อง",
+          "gap_th": null,
           "evidence": [
             {
-              "id": "p1-e007",
-              "quote": "เรียน machine learning และ NLP จากหลักสูตรออนไลน์ และใช้ Docker ใน local environment",
+              "id": "p1-e010",
+              "quote": "Relevant education: MSc Data Science and applied NLP certification.",
               "page": 1,
               "source_section": "other"
             }
@@ -437,14 +491,14 @@
   ],
   "metadata": {
     "model": "gemini-3.5-flash-lite",
-    "evidence_catalog_version": "1.1",
+    "evidence_catalog_version": "1.2",
     "matching_prompt_version": "2.3",
     "rubric_version": "1.0",
     "analysis_language": "th",
-    "processing_time_ms": 8194,
+    "processing_time_ms": 8470,
     "llm_request_count": 1,
-    "input_tokens": 1657,
-    "output_tokens": 1719
+    "input_tokens": 2078,
+    "output_tokens": 2047
   },
   "decision_support_notice": "ผลลัพธ์นี้เป็นเครื่องมือช่วยประเมินและควรได้รับการทบทวนโดยมนุษย์"
 }

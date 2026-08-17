@@ -1,5 +1,4 @@
 import asyncio
-from pathlib import Path
 from typing import Annotated, cast
 
 from fastapi import APIRouter, File, Request, UploadFile
@@ -22,7 +21,7 @@ def get_analysis_service(request: Request) -> AnalysisRunner:
     settings = cast(Settings, request.app.state.settings)
     if settings.gemini_api_key is None:
         raise MissingApiKeyError("GEMINI_API_KEY is required")
-    rubric = load_rubric(Path("config/ai_data_solution_rubric.yaml"))
+    rubric = load_rubric(settings.rubric_path)
     service = AnalysisService(
         provider=GeminiResumeAnalyzer(settings),
         rubric=rubric,

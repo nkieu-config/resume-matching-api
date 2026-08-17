@@ -12,7 +12,7 @@ def test_builder_creates_stable_page_ordered_chunks() -> None:
     second = build_evidence_catalog(page_texts)
 
     assert first == second
-    assert first.version == "1.1"
+    assert first.version == "1.2"
     assert [item.id for item in first.items] == [
         "p1-e001",
         "p1-e002",
@@ -48,6 +48,56 @@ def test_builder_splits_oversized_blocks_without_changing_word_order() -> None:
     assert len(catalog.items) > 1
     assert all(len(item.quote) <= 1000 for item in catalog.items)
     assert " ".join(item.quote for item in catalog.items) == source
+
+
+def test_builder_labels_thai_section_headings() -> None:
+    page_texts = (
+        "ประสบการณ์ทำงาน\nพัฒนา Python REST API ให้ทีมธุรกิจ\n"
+        "โครงการ\nผู้ช่วยตอบคำถามภายในองค์กร\n"
+        "ทักษะ\nPython, SQL, Docker\n"
+        "การศึกษา\nวิทยาศาสตรบัณฑิต สาขาวิทยาการคอมพิวเตอร์\n"
+        "ใบรับรอง\nGoogle Cloud Associate Engineer",
+    )
+
+    catalog = build_evidence_catalog(page_texts)
+
+    sections = {item.quote: item.source_section for item in catalog.items}
+    assert sections["พัฒนา Python REST API ให้ทีมธุรกิจ"] is SourceSection.EXPERIENCE
+    assert sections["ผู้ช่วยตอบคำถามภายในองค์กร"] is SourceSection.PROJECTS
+    assert sections["Python, SQL, Docker"] is SourceSection.SKILLS
+    assert sections["วิทยาศาสตรบัณฑิต สาขาวิทยาการคอมพิวเตอร์"] is SourceSection.EDUCATION
+    assert sections["Google Cloud Associate Engineer"] is SourceSection.CERTIFICATIONS
+
+
+def test_builder_labels_decorated_and_compound_english_headings() -> None:
+    page_texts = (
+        "PROFESSIONAL EXPERIENCE:\nLed an LLM delivery team\n"
+        "— Key Projects —\nBuilt an internal assistant\n"
+        "Core Competencies\nPrompt engineering",
+    )
+
+    catalog = build_evidence_catalog(page_texts)
+
+    sections = {item.quote: item.source_section for item in catalog.items}
+    assert sections["Led an LLM delivery team"] is SourceSection.EXPERIENCE
+    assert sections["Built an internal assistant"] is SourceSection.PROJECTS
+    assert sections["Prompt engineering"] is SourceSection.SKILLS
+
+
+def test_builder_does_not_treat_prose_or_bullets_as_headings() -> None:
+    page_texts = (
+        "Experience\n"
+        "• Improved teamwork and communication skills across squads\n"
+        "\n"
+        "มีประสบการณ์จัดตารางงานและประสานงานผู้เข้าร่วมกิจกรรม\n"
+        "\n"
+        "Data Analyst | 2 years of experience",
+    )
+
+    catalog = build_evidence_catalog(page_texts)
+
+    assert len(catalog.items) == 4
+    assert all(item.source_section is SourceSection.EXPERIENCE for item in catalog.items)
 
 
 def test_project_heading_after_bullet_starts_a_new_evidence_block() -> None:

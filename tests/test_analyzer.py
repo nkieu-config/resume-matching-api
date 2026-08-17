@@ -78,7 +78,7 @@ async def test_analysis_uses_one_matching_call_and_assembles_scores() -> None:
     assert result.metadata.input_tokens == 100
     assert result.metadata.output_tokens == 40
     assert result.metadata.llm_request_count == 1
-    assert result.metadata.evidence_catalog_version == "1.1"
+    assert result.metadata.evidence_catalog_version == "1.2"
     assert result.metadata.matching_prompt_version == "2.3"
     assert len(result.category_scores) == 5
     assert provider.feedback == [None]
@@ -102,7 +102,8 @@ async def test_matching_schema_failure_gets_one_controlled_retry() -> None:
 
     result = await service.analyze(make_pdf())
 
-    assert provider.feedback == [None, MATCHING_CORRECTION]
+    assert provider.feedback[0] is None
+    assert "invalid matching schema" in provider.feedback[1]
     assert result.metadata.llm_request_count == 2
 
 
@@ -124,7 +125,8 @@ async def test_matching_business_failure_gets_one_controlled_retry() -> None:
 
     await service.analyze(make_pdf())
 
-    assert provider.feedback == [None, MATCHING_CORRECTION]
+    assert provider.feedback[0] is None
+    assert "missing criteria: education.relevant" in provider.feedback[1]
 
 
 @pytest.mark.anyio
@@ -143,7 +145,8 @@ async def test_second_matching_failure_becomes_provider_output_error() -> None:
     with pytest.raises(ProviderOutputError, match="matching validation failed twice"):
         await service.analyze(make_pdf())
 
-    assert provider.feedback == [None, MATCHING_CORRECTION]
+    assert provider.feedback[0] is None
+    assert "missing criteria: education.relevant" in provider.feedback[1]
 
 
 @pytest.mark.anyio

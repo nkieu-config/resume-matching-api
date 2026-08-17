@@ -1,4 +1,5 @@
 import asyncio
+import json
 from collections.abc import Awaitable, Callable
 from typing import Any, TypeVar
 
@@ -79,9 +80,27 @@ class GeminiResumeAnalyzer:
             },
         )
         try:
-            parsed = schema.model_validate_json(response.output_text)
-        except (AttributeError, TypeError, ValueError) as exc:
-            raise ProviderOutputError("Gemini response did not match the required schema") from exc
+            raw_text = response.output_text
+            raw_obj = json.loads(raw_text)
+            if (
+                isinstance(raw_obj, dict)
+                and "assessments" in raw_obj
+                and isinstance(raw_obj["assessments"], list)
+            ):
+                for item in raw_obj["assessments"]:
+                    if (
+                        isinstance(item, dict)
+                        and item.get("evidence_level") == 0
+                        and item.get("evidence_ids")
+                    ):
+                        item["evidence_ids"] = []
+                parsed = schema.model_validate(raw_obj)
+            else:
+                parsed = schema.model_validate_json(raw_text)
+        except (AttributeError, TypeError, ValueError, json.JSONDecodeError) as exc:
+            raise ProviderOutputError(
+                f"Gemini response did not match the required schema: {exc}"
+            ) from exc
         usage_data = getattr(response, "usage", None)
         usage = ProviderUsage(
             input_tokens=getattr(usage_data, "total_input_tokens", None),
@@ -94,6 +113,10 @@ class GeminiResumeAnalyzer:
         input_data: list[dict[str, Any]],
         response_format: dict[str, Any],
     ) -> Any:
+        gen_config: dict[str, Any] = {"temperature": self._settings.gemini_temperature}
+        if self._settings.gemini_seed is not None:
+            gen_config["seed"] = self._settings.gemini_seed
+
         for attempt in range(3):
             try:
                 async with asyncio.timeout(self._settings.provider_timeout_seconds):
@@ -101,6 +124,7 @@ class GeminiResumeAnalyzer:
                         model=self._settings.gemini_model,
                         input=input_data,
                         response_format=response_format,
+                        generation_config=gen_config,
                     )
             except TimeoutError as exc:
                 raise ProviderTimeoutError("Gemini request timed out") from exc

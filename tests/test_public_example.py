@@ -12,7 +12,7 @@ def test_public_example_matches_response_schema_and_totals() -> None:
     result = AnalysisResult.model_validate(payload)
 
     assert result.metadata.model == "gemini-3.5-flash-lite"
-    assert result.metadata.evidence_catalog_version == "1.1"
+    assert result.metadata.evidence_catalog_version == "1.2"
     assert result.metadata.matching_prompt_version == "2.3"
     assert result.metadata.llm_request_count == 1
     assert {item.category for item in result.category_scores} == set(Category)

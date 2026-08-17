@@ -98,13 +98,14 @@ class AnalysisService:
         await self._provider.close()
 
     async def _match(self, catalog: EvidenceCatalog) -> tuple[MatchingOutput, int]:
-        feedback = (
+        generic_feedback = (
             "Return exactly one schema-valid assessment for every rubric criterion "
-            "using only known evidence identifiers."
+            "using only known evidence identifiers. For level 0, evidence_ids must be empty []."
         )
         try:
             first = await self._provider.match(catalog, self._rubric)
-        except ProviderOutputError:
+        except ProviderOutputError as exc:
+            feedback = f"Previous output was invalid: {exc}. {generic_feedback}"
             second = await self._provider.match(
                 catalog,
                 self._rubric,
@@ -114,7 +115,8 @@ class AnalysisService:
             try:
                 validate_matching_result(catalog, self._rubric, first.matching)
                 return first, 1
-            except AssessmentValidationError:
+            except AssessmentValidationError as exc:
+                feedback = f"Validation failed: {exc}. {generic_feedback}"
                 second = await self._provider.match(
                     catalog,
                     self._rubric,
@@ -123,7 +125,7 @@ class AnalysisService:
         try:
             validate_matching_result(catalog, self._rubric, second.matching)
         except AssessmentValidationError as exc:
-            raise ProviderOutputError("matching validation failed twice") from exc
+            raise ProviderOutputError(f"matching validation failed twice: {exc}") from exc
         return second, 2
 
     @staticmethod
