@@ -1,6 +1,6 @@
 # Resume Matching API
 
-This project implements the resume-analysis coding assignment for the AI & Data Solution role. It accepts a PDF resume and returns a JSON result with an overall score, category scores, Thai explanations, and the resume evidence used for each criterion.
+This API implements the AI & Data Solution resume-analysis assignment. It accepts a PDF resume and returns a JSON evaluation containing scores, Thai explanations, and extracted evidence for each criterion.
 
 Built with Python, FastAPI, Pydantic, pypdf, and Gemini 3.5 Flash-Lite.
 
@@ -19,7 +19,7 @@ flowchart TD
     F --> G["Return JSON result (200 OK)"]
 ```
 
-Python creates the evidence catalog before the LLM call, so every evidence item has a stable ID, page number, and verified quote from the extracted resume text. Gemini receives this catalog and the fixed rubric instead of the original PDF. A valid response normally uses one Gemini request; invalid structured output can be retried once.
+Python builds an evidence catalog before calling the LLM. Gemini evaluates this catalog against the rubric instead of the raw PDF, ensuring every quote has a stable ID, page number, and verified text. Schema validation errors trigger a single automatic retry.
 
 ## Scoring
 
@@ -54,11 +54,12 @@ Requirements: Python 3.13, [uv](https://docs.astral.sh/uv/), and a Gemini API ke
 
 ```bash
 cp .env.example .env
+# Set GEMINI_API_KEY in .env before running
 uv sync --frozen
 uv run uvicorn resume_matcher.main:app --reload
 ```
 
-Set `GEMINI_API_KEY` in `.env`, then open [Swagger UI](http://127.0.0.1:8000/docs).
+Open [Swagger UI](http://127.0.0.1:8000/docs).
 
 The service loads the AI & Data Solution rubric by default. Set `RUBRIC_PATH` to score against a different job description without changing code.
 
@@ -69,7 +70,7 @@ curl -X POST http://127.0.0.1:8000/v1/resume-analyses \
   -F "file=@resume.pdf;type=application/pdf"
 ```
 
-The endpoint accepts one unencrypted PDF up to 10 MB and 20 pages. Image-only PDFs return `422` because OCR is not included. A sample response is available in [`examples/analysis_result.example.json`](examples/analysis_result.example.json).
+The endpoint accepts one unencrypted PDF (up to 10 MB, 20 pages). Image-only PDFs return `422` as OCR is not supported. See [`examples/analysis_result.example.json`](examples/analysis_result.example.json) for a sample response.
 
 ## Docker
 
@@ -105,6 +106,6 @@ The default output is `private/analysis-result.json`, which is excluded from Git
 
 ## Limitations
 
-- The API uses the fixed AI & Data Solution rubric and supports text-extractable PDFs only.
-- The API does not store uploaded resumes or generated results.
-- The output is intended to support human review, not make a hiring decision.
+- Uses the fixed AI & Data Solution rubric and supports text-extractable PDFs only.
+- Does not store uploaded resumes or generated results.
+- Output is intended to support human review, not make a hiring decision.
